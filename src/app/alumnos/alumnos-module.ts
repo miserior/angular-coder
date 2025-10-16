@@ -4,6 +4,12 @@ import { Alumnos } from './alumnos';
 import { AlumnosList } from './components/alumnos-list/alumnos-list';
 import { AlumnoForm } from './components/alumno-form/alumno-form';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { SharedModule } from '../shared/shared-module';
 
 
 
@@ -16,7 +22,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    SharedModule
   ],
   exports: [
     Alumnos
