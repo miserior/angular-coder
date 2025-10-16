@@ -21,8 +21,6 @@ export class AlumnosList {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['alumnos'] && this.dataSource) {
-      // Set the new data to the MatTableDataSource.
-      // This is the crucial step that refreshes the table.
       this.dataSource.data = this.alumnos;
     }
   }
