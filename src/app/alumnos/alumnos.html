@@ -1,3 +1,3 @@
-<p>alumnos works!</p>
-<app-alumnos-list [alumnos]="alumnosList"></app-alumnos-list>
+<h1 appLettersize>Gestión de alumnos</h1>
+<app-alumnos-list [alumnos]="alumnosList" (alumnoDelete)="onDelete($event)"></app-alumnos-list>
 <app-alumno-form (sendAlumno)="onAddAlumno($event)"></app-alumno-form>

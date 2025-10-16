@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Alumno } from './interface/Alumno';
 
 @Component({
@@ -7,7 +7,7 @@ import { Alumno } from './interface/Alumno';
   templateUrl: './alumnos.html',
   styleUrl: './alumnos.css'
 })
-export class Alumnos {
+export class Alumnos implements OnInit {
   alumnosList: Alumno[] = [
     {id:1, nombre: 'JUAN', apellido: 'Pérez', edad: 20 },
     {id:2, nombre: 'María', apellido: 'Gómez', edad: 22 },
@@ -28,5 +28,14 @@ export class Alumnos {
       id: this.alumnosList.length + 1
     };
     this.alumnosList.push(nuevo);
+  }
+
+  ngOnInit(): void {
+    // inicialización si es necesaria
+  }
+
+  onDelete(alumnoId: number): void {
+    // El componente hijo emite el id; aquí filtramos el array de alumnos
+    this.alumnosList = this.alumnosList.filter(a => a.id !== alumnoId);
   }
 }

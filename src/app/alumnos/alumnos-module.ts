@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { SharedModule } from '../shared/shared-module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -21,6 +22,7 @@ import { SharedModule } from '../shared/shared-module';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
@@ -28,7 +30,7 @@ import { SharedModule } from '../shared/shared-module';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    SharedModule
+    MatIconModule
   ],
   exports: [
     Alumnos
