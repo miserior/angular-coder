@@ -19,6 +19,6 @@
         <div class="error">El nombre es obligatorio y debe tener al menos 2 caracteres.</div>
         }
 
-        <button matButton="filled" type="submit">Agregar Alumno</button>
+        <button matButton="filled" type="submit">{{ isEditMode ? 'Editar' : 'Crear'}}</button>
     </form>
 </div>

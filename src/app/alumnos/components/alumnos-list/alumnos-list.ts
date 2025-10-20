@@ -1,5 +1,6 @@
 import { Component, Input, ViewChild, EventEmitter,Output, OnChanges, SimpleChanges} from '@angular/core';
 import { Alumno } from '../../interface/Alumno';
+import { AlumnoService} from '../../../services/alumno';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 
@@ -12,25 +13,28 @@ import { MatPaginator } from '@angular/material/paginator';
 export class AlumnosList {
 
   @Input() alumnos: Alumno[] = [];
-  @Output() alumnoDelete = new EventEmitter<number>();
 
   displayedColumns: string[] = ['id', 'nombre', 'apellido', 'edad', 'acciones'];
   dataSource = new MatTableDataSource<Alumno>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['alumnos'] && this.dataSource) {
-      this.dataSource.data = this.alumnos;
-    }
+  constructor(private alumnoService: AlumnoService) { 
+    this.alumnoService.alumnos$.subscribe(alumnos => {
+      this.dataSource.data = alumnos;
+    } );
   }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-    this.dataSource.data = this.alumnos;
+    this.alumnoService.getAlumnos();
   }
 
   deleteAlumno(id: number): void {
-    this.alumnoDelete.emit(id);
+    this.alumnoService.deleteAlumno(id);
+  }
+
+  editAlumno(id: number): void {
+    this.alumnoService.setUpdateAlumno(id);
   }
 }

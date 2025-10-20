@@ -1,0 +1,10 @@
+.page-container {
+  position: relative;
+  min-height: 80vh; /* Asegura que haya espacio para el botón */
+}
+
+.add-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}

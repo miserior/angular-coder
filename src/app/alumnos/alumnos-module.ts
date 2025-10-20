@@ -11,6 +11,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { SharedModule } from '../shared/shared-module';
 import { MatIconModule } from '@angular/material/icon';
+import { AlumnoService } from '../services/alumno';
+import { Dialog } from './components/dialog/dialog';
+
 
 
 
@@ -18,8 +21,10 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     Alumnos,
     AlumnosList,
-    AlumnoForm
+    AlumnoForm,
+    Dialog
   ],
+  providers: [AlumnoService],
   imports: [
     CommonModule,
     SharedModule,
