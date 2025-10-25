@@ -1,0 +1,66 @@
+<mat-drawer-container class="app-container" autosize>
+
+  <!-- 1. Sidenav con título, iconos y separador -->
+  <mat-drawer #drawer class="sidenav" mode="side" opened="true">
+    <div class="sidenav-header">
+      <h2 class="mat-h2">Menú</h2>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      @for (item of listItems; track $index) {
+      <a mat-list-item [routerLink]="item.route" routerLinkActive="active-link" (click)="drawer.toggle()">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        <span matListItemTitle>{{item.name}}</span>
+      </a>
+      }
+    </mat-nav-list>
+  </mat-drawer>
+
+  <!-- Contenedor del contenido principal -->
+  <mat-drawer-content>
+    <!-- 3. Toolbar con color, sombra y espaciador -->
+    <mat-toolbar color="primary" class="mat-elevation-z4">
+      <button mat-icon-button (click)="drawer.toggle()" title="Abrir/Cerrar menú">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Mi Aplicación de una escuela</span>
+
+      <!-- Este espaciador empuja lo siguiente a la derecha -->
+      <span class="spacer"></span>
+
+      <button mat-icon-button title="Perfil de usuario" [matMenuTriggerFor]="userMenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #userMenu="matMenu">
+        <div class="menu-header">
+    <h4>Juan Perez</h4>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <button mat-menu-item routerLink="/perfil">
+    <mat-icon>account_box</mat-icon>
+    <span>Mi Perfil</span>
+  </button>
+  
+  <button mat-menu-item routerLink="/configuracion">
+    <mat-icon>settings</mat-icon>
+    <span>Configuración</span>
+  </button>
+  
+  <button mat-menu-item>
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Cerrar Sesión</span>
+  </button>
+      </mat-menu>
+
+    </mat-toolbar>
+
+    <!-- 4. Contenido principal con padding y router-outlet -->
+    <main class="content">
+      <!-- Aquí es donde Angular cargará los componentes según la ruta -->
+      <router-outlet></router-outlet>
+    </main>
+  </mat-drawer-content>
+
+</mat-drawer-container>

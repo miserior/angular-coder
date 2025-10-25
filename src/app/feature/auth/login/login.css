@@ -1,0 +1,30 @@
+.login-container {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;    /* Centrado vertical */
+  height: 100vh;          /* Ocupa toda la altura de la ventana */
+  background-color: #f0f2f5; /* Un color de fondo suave */
+}
+
+/* Tarjeta del formulario */
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Formulario dentro de la tarjeta */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Clase de utilidad para que los elementos ocupen todo el ancho */
+.full-width {
+  width: 100%;
+}
+
+/* Margen inferior para los campos del formulario */
+mat-form-field {
+  margin-bottom: 15px;
+}

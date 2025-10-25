@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-title>
+    {{ isEditing ? 'Editar Alumno' : 'Crear Nuevo Alumno' }}
+  </mat-card-title>
+  
+  <mat-card-content>
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()" class="alumnos-form">
+      
+      @if (isEditing) {
+        <mat-form-field appearance="outline">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="id" readonly />
+        </mat-form-field>
+      }
+
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" placeholder="Ej. Juan" />
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error>{{ getError('nombre') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="apellido" placeholder="Ej. Pérez" />
+        <mat-icon matSuffix>badge</mat-icon>
+        <mat-error>{{ getError('apellido') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Edad</mat-label>
+        <input matInput type="number" formControlName="edad" placeholder="Ej. 25" />
+        <mat-icon matSuffix>cake</mat-icon>
+        <mat-error>{{ getError('edad') }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="ejemplo@correo.com" />
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error>{{ getError('email') }}</mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onSubmit()"
+      [disabled]="createForm.invalid"
+      class="w-full"
+    >
+      Guardar
+    </button>
+  </mat-card-actions>
+</mat-card>

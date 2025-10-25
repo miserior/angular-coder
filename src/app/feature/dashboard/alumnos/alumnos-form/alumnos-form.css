@@ -1,0 +1,18 @@
+.alumnos-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre los campos del formulario */
+}
+
+mat-card-actions {
+  padding: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+mat-card-title {
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}

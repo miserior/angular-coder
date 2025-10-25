@@ -1,0 +1,19 @@
+/* Clase para el formulario que organiza los campos verticalmente */
+.course-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre los campos del formulario */
+}
+
+/* Alineación y espaciado para los botones de acción */
+mat-card-actions {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+  gap: 10px;
+}
+
+/* Clase de utilidad para que un elemento ocupe todo el ancho disponible */
+.w-full {
+  width: 100%;
+}

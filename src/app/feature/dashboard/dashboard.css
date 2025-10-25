@@ -1,0 +1,39 @@
+/* Contenedor principal para ocupar toda la pantalla */
+.app-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5; /* Un fondo gris claro para el contenido */
+}
+
+/* Estilo del Sidenav */
+.sidenav {
+  width: 240px;
+  padding: 10px;
+}
+
+.sidenav-header {
+  padding: 10px 16px;
+  text-align: center;
+}
+
+/* Estilo para el enlace activo en el Sidenav */
+.active-link {
+  background-color: rgba(63, 81, 181, 0.1); /* Color primario con opacidad */
+  color: #3f51b5; /* Color primario */
+  border-radius: 8px;
+}
+
+.active-link mat-icon {
+  color: #3f51b5; /* Color primario para el ícono */
+}
+
+/* Espaciador para la barra de herramientas */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Contenedor del contenido con padding */
+.content {
+  padding: 24px;
+}
+
