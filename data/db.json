@@ -1,0 +1,115 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "role": "ADMIN"
+    },
+    {
+      "id": "2",
+      "email": "user@gmail.com",
+      "password": "user123",
+      "role": "USER"
+    },
+    {
+      "id": "3",
+      "email": "user2@gmail.com",
+      "password": "user234",
+      "role": "USER"
+    }
+  ],
+  "clases": [],
+  "cursos": [
+    {
+      "id": "1",
+      "nombre": "Introducción a Angular V1.",
+      "descripcion": "Curso básico sobre el framework Angulares",
+      "fechaInicio": "2024-01-15",
+      "fechaFin": "2024-03-15",
+      "estado": "ACTIVO"
+    },
+    {
+      "id": "2",
+      "nombre": "Desarrollo de Aplicaciones Web",
+      "descripcion": "Curso avanzado sobre desarrollo web con Angular y otras tecnologías.",
+      "fechaInicio": "2024-02-01",
+      "fechaFin": "2024-04-30",
+      "estado": "ACTIVO"
+    },
+    {
+      "id": "3",
+      "nombre": "Fundamentos de TypeScript",
+      "descripcion": "Curso para aprender los conceptos básicos de TypeScript.",
+      "fechaInicio": "2023-11-10",
+      "fechaFin": "2023-12-20",
+      "estado": "ACTIVO"
+    },
+    {
+      "id": "4",
+      "nombre": "nuevo curso v9",
+      "descripcion": "el nuevo curso",
+      "fechaInicio": "2025-11-19T05:00:00.000Z",
+      "fechaFin": "2025-11-21T05:00:00.000Z",
+      "estado": "ACTIVO"
+    }
+  ],
+  "alumnos": [
+    {
+      "id": "1",
+      "nombre": "JUAN",
+      "apellido": "Pérez",
+      "edad": 20,
+      "email": "jperez@correo.com"
+    },
+    {
+      "id": "2",
+      "nombre": "MARÍA",
+      "apellido": "Gómez",
+      "edad": 22,
+      "email": "maria@correo.com"
+    },
+    {
+      "id": "3",
+      "nombre": "CARLOS",
+      "apellido": "Rodríguez",
+      "edad": 25,
+      "email": "crodriguez@correo.com"
+    },
+    {
+      "id": "4",
+      "nombre": "ANA",
+      "apellido": "Martínez",
+      "edad": 19,
+      "email": "amartinez@correo.com"
+    },
+    {
+      "id": "5",
+      "nombre": "LUIS",
+      "apellido": "Hernández",
+      "edad": 31,
+      "email": "luis.h@correo.com"
+    },
+    {
+      "id": "6",
+      "nombre": "LAURA",
+      "apellido": "López",
+      "edad": 28,
+      "email": "llopez@correo.com"
+    },
+    {
+      "id": "7",
+      "nombre": "ANDRÉS",
+      "apellido": "García",
+      "edad": 24,
+      "email": "andresg@correo.com"
+    },
+    {
+      "id": "8",
+      "nombre": "SOFÍA",
+      "apellido": "Díaz",
+      "edad": 26,
+      "email": "sofia.diaz@correo.com"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 export interface ICurso {
-    id: number;
+    id: number | string;
     nombre: string;
     descripcion: string;
     fechaInicio: Date;

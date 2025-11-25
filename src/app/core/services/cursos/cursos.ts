@@ -1,43 +1,52 @@
 import { Injectable } from '@angular/core';
 import { ICurso } from './model/curso';
-import { mockCursos } from './data/mock';
 import { BehaviorSubject, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { API_URL } from '../../utils/constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CursosService {
-  private cursosList: ICurso[] = mockCursos;
+  private cursosList: ICurso[] = [];
   private cursosSubject = new BehaviorSubject<ICurso[]>([]);
   cursos$ = this.cursosSubject.asObservable();
   cursoEdit = new BehaviorSubject<ICurso | null>(null);
-  alumnoToEdit$ = this.cursoEdit.asObservable();
+  cursoToEdit$ = this.cursoEdit.asObservable();
+  private cursosUrl = API_URL + '/cursos';
 
-  constructor() {
-    this.cursosSubject.next(this.cursosList);
+  constructor(private http: HttpClient) {
+    this.getCursos();
   }
 
   getCursos() {
-    this.cursosSubject.next([...this.cursosList]); // next envia información a los suscriptores
+    this.http.get<ICurso[]>(this.cursosUrl).subscribe((cursos) => {
+      this.cursosList = cursos; // Actualizar la lista local
+      this.cursosSubject.next(cursos);
+    });
   }
 
   getCursoById(id: number) {
-    return of(this.cursosList.find((curso) => curso.id === id));
+    return this.http.get<ICurso>(`${this.cursosUrl}/${id}`);
   }
 
-  addCurso(alumno: ICurso): void {
+  addCurso(curso: ICurso): void {
     const nuevo: ICurso = {
-      ...alumno,
-      id: this.cursosList.length + 1,
+      ...curso,
+      id: String(Number(this.cursosList.length) + 1),
     };
-    this.cursosList.push(nuevo);
-    this.cursosSubject.next([...this.cursosList]);
+    this.http.post<ICurso>(this.cursosUrl, nuevo).subscribe((nuevo) => {
+      this.cursosList.push(nuevo);
+      this.cursosSubject.next([...this.cursosList]);
+    });
   }
 
   updateCurso(curso: ICurso): void {
     const updatedCourses = this.cursosList.map((c) => (c.id === curso.id ? curso : c));
-    this.cursosSubject.next(updatedCourses);
-    this.cursosList = updatedCourses;
+    this.http.put<ICurso>(`${this.cursosUrl}/${curso.id}`, curso).subscribe((curso) => {
+      this.cursosList = updatedCourses;
+      this.cursosSubject.next(updatedCourses);
+    });
   }
 
   setUpdateCurso(id: number): void {
@@ -45,7 +54,10 @@ export class CursosService {
   }
 
   deleteCurso(id: number): void {
-    this.cursosList = this.cursosList.filter((a) => a.id !== id);
-    this.cursosSubject.next([...this.cursosList]);
+    const updatedCourses = this.cursosList.filter((a) => a.id !== id);
+    this.http.delete<ICurso>(`${this.cursosUrl}/${id}`).subscribe(() => {
+      this.cursosList = updatedCourses;
+      this.cursosSubject.next(updatedCourses);
+    });
   }
 }

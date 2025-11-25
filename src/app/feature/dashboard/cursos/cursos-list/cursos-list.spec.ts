@@ -20,4 +20,9 @@ describe('CursosList', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Should have a table', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('table')).toBeTruthy();
+  });
 });
