@@ -1,5 +1,5 @@
 export interface IAlumno {
-    id: number;
+    id: number | string;
     nombre: string;
     apellido: string;
     edad: number;

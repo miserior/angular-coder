@@ -19,9 +19,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogTitle, MatDialogContent, MatDialogActions } from '@angular/material/dialog';
+import { ErrorDialog } from './components/error-dialog/error-dialog';
 
 @NgModule({
-  declarations: [CapitalizePipe, Lettersize],
+  declarations: [CapitalizePipe, Lettersize, ErrorDialog],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -40,11 +43,17 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSortModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogModule,
+
   ],
   exports: [
     CapitalizePipe,
     Lettersize,
+    ErrorDialog,
     CommonModule,
     ReactiveFormsModule,
     MatCardModule,
@@ -62,7 +71,11 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSortModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogModule,
   ],
   providers: [provideNativeDateAdapter()],
 })

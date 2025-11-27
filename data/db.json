@@ -48,7 +48,7 @@
     {
       "id": "4",
       "nombre": "nuevo curso v9",
-      "descripcion": "el nuevo curso",
+      "descripcion": "el nuevo curso yes",
       "fechaInicio": "2025-11-19T05:00:00.000Z",
       "fechaFin": "2025-11-21T05:00:00.000Z",
       "estado": "ACTIVO"
@@ -84,13 +84,6 @@
       "email": "amartinez@correo.com"
     },
     {
-      "id": "5",
-      "nombre": "LUIS",
-      "apellido": "Hernández",
-      "edad": 31,
-      "email": "luis.h@correo.com"
-    },
-    {
       "id": "6",
       "nombre": "LAURA",
       "apellido": "López",
@@ -109,7 +102,14 @@
       "nombre": "SOFÍA",
       "apellido": "Díaz",
       "edad": 26,
-      "email": "sofia.diaz@correo.com"
+      "email": "sofia.diaz@correo.com.co"
+    },
+    {
+      "id": "8",
+      "nombre": "miguel",
+      "apellido": "jose",
+      "edad": 34,
+      "email": "email@corre.com"
     }
   ]
 }
