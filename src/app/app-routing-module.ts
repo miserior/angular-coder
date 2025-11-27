@@ -4,6 +4,7 @@ import { Login } from './feature/auth/login/login';
 import { Dashboard } from './feature/dashboard/dashboard';
 import { authGuard } from './core/guards/auth/auth-guard';
 import { loginGuard } from './core/guards/login/login-guard';
+import { PageNotFound } from './shared/components/page-not-found/page-not-found';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
     component: Dashboard,
     loadChildren: () => import('./feature/dashboard/dashboard-module').then(m => m.DashboardModule),
     canActivate: [authGuard],
+  },
+  { 
+    path: '**', 
+    component: PageNotFound
   }
   
 

@@ -22,9 +22,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDialogTitle, MatDialogContent, MatDialogActions } from '@angular/material/dialog';
 import { ErrorDialog } from './components/error-dialog/error-dialog';
+import { PageNotFound } from './components/page-not-found/page-not-found';
 
 @NgModule({
-  declarations: [CapitalizePipe, Lettersize, ErrorDialog],
+  declarations: [CapitalizePipe, Lettersize, ErrorDialog, PageNotFound],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -54,6 +55,7 @@ import { ErrorDialog } from './components/error-dialog/error-dialog';
     CapitalizePipe,
     Lettersize,
     ErrorDialog,
+    PageNotFound,
     CommonModule,
     ReactiveFormsModule,
     MatCardModule,
